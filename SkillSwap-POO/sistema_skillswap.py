@@ -1,21 +1,3 @@
-# A plataforma SkillSwap permite que usuários troquem aulas e mentorias entre si, sem envolver pagamento. 
-# Cada Membro pode ofertar habilidades (como “guitarra”, “python”, “cozinha japonesa”) e solicitar sessões com outros membros.
-
-# Uma Habilidade possui nome, nível de proficiência (iniciante, intermediário, avançado) e uma breve descrição. 
-# Uma Sessão representa um encontro entre dois membros, e deve armazenar:
-
-# mentor,
-# aprendiz,
-# habilidade ensinada,
-# duração prevista,
-# status (agendada, realizada, cancelada).
-
-# Implemente um modelo orientado a objetos em Python que represente esse cenário. Inclua:
-
-# Classes principais com seus atributos e métodos;
-# Relações adequadas entre objetos (associação, composição, herança, etc.);
-# Um pequeno exemplo de código criando dois membros e simulando a realização de uma sessão.
-
 from __future__ import annotations
 
 class Habilidade:
@@ -160,18 +142,3 @@ class Membro:
         mostrada em "visualizar_sessoes".
         """
         self._sessoes[numero_sessao - 1].status = novo_status
-
-#Driver Code
-membro1 = Membro("Jordana")
-membro2 = Membro("Miguel")
-
-habilidade1 = Habilidade("Matemática", "Intermediário", "Aulas de reforço")
-habilidade2 = Habilidade("Violão", "Avançado", "sem descrição")
-
-membro1.ofertar_habilidade(habilidade2)
-membro2.ofertar_habilidade(habilidade1)
-
-membro1.solicitar_sessao(membro2, habilidade1, 2)
-membro1.visualizar_sessoes()
-membro1.atualizar_sessao(1, "realizada")
-membro1.visualizar_sessoes()
